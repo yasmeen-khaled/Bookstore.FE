@@ -1,0 +1,28 @@
+
+<div class="container mt-4">
+  <h2>Add Book</h2>
+
+  <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" class="form-control" id="title" formControlName="title">
+    </div>
+
+    <div class="mb-3">
+      <label for="summary" class="form-label">Summary</label>
+      <textarea class="form-control" id="summary" formControlName="summary"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="price" class="form-label">Price</label>
+      <input type="number" class="form-control" id="price" formControlName="price">
+    </div>
+
+    <div class="mb-3">
+      <label for="cover" class="form-label">Cover Image</label>
+      <input type="file" class="form-control" id="cover" (change)="onFileChange($event)">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
