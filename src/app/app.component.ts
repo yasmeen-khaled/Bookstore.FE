@@ -29,4 +29,7 @@ export class AppComponent implements OnInit{
   logout(){
     localStorage.removeItem('UserToken2');
   }
+  signup(){
+    this._router.navigateByUrl('signup');
+  }
 }

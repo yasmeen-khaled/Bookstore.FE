@@ -3,6 +3,7 @@ import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { LoginModel } from '../models/Login-model';
+import { SignupModel } from '../models/Signup-model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +16,9 @@ export class UsersService {
 
   login(model: LoginModel): Observable<any>{
     return this.http.post(`${this.apiURL}/Login`, model);
+  }
+
+  signup(model: SignupModel): Observable<any>{
+    return this.http.post(`${this.apiURL}/Register/user`, model);
   }
 }

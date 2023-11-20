@@ -1,0 +1,28 @@
+<div class="container">
+  <h2>Signup</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="userName">Username:</label>
+      <input type="text" class="form-control" id="userName" [(ngModel)]="model.userName" name="userName" required>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" class="form-control" id="password" [(ngModel)]="model.password" name="password" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" [(ngModel)]="model.email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="role">Role:</label>
+      <select class="form-control" id="role" [(ngModel)]="model.role" name="role" required>
+        <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Signup</button>
+  </form>
+</div>
